@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const UserSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
     name: {
         type: String,
         required: [true, 'name is required']
@@ -18,7 +18,7 @@ const UserSchema = mongoose.Schema({
         enum: ['ADMIN_ROLE', 'CLIENT_ROLE'],
         default: 'CLIENT_ROLE'
     },
-    state: {
+    status: {
         type: Boolean,
         default: true
     }
@@ -26,4 +26,4 @@ const UserSchema = mongoose.Schema({
 
 });
 
-export default mongoose.model('User', UserSchema);
+export default mongoose.model('User', userSchema);

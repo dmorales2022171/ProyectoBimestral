@@ -1,16 +1,10 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
-import {
-    userPost
-} from './user.controller.js';
+import { userGet, userPost, userPut } from './user.controller.js';
 
-import {
-    existMail,
-    isValidRole,
-    existsUser
-
-} from '../helpers/db-validators.js';
-import { validarCampos } from '../middlewares/validar-campos.js';
+import { existsMail, existsUserById } from '../helpers/db-validators.js';
+import { validateFilds } from '../middlewares/validar-campos.js';
+import { validateJWT } from '../middlewares/validate-jwt.js';
 
 const router = Router();
 
@@ -20,12 +14,24 @@ router.post(
         check('name', 'name is required').not().isEmpty(),
         check("password", "The password must be less than 6 characters").isLength({ min: 6 }),
         check("mail", "This is not a valid email").isEmail(),
-        check("mail").custom(existMail),
-        check("role").custom(isValidRole),
-        validarCampos
-        
+        check("mail").custom(existsMail),
+        validateFilds
     ],
     userPost
 )
 
+router.get(
+    "/",
+    validateJWT,
+    userGet
+)
+
+router.put(
+    "/:id", 
+    [
+        check("id", "it is not valid id").isMongoId(),
+        check("id").custom(existsUserById),        
+    ],
+    userPut
+)
 export default router;

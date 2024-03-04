@@ -1,0 +1,67 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "userCollections",
+    "dateExported": "2024-03-04T23:23:30.757Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c38b4f3a-b047-4107-aa15-5c13f2299606",
+            "colId": "6a5ab0fe-ad90-4772-b515-ed53da8cb5d6",
+            "containerId": "",
+            "name": "userPost",
+            "url": "http://localhost:8080/salesApi/v1/users",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-04T21:34:35.055Z",
+            "modified": "2024-03-04T21:55:24.616Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Luis Monterroso\",\n  \"mail\": \"lmonterroso-2022135@kinal.edu.gt\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "436df8c2-7a8b-4ad8-98dc-77faf1e6f6e0",
+            "colId": "6a5ab0fe-ad90-4772-b515-ed53da8cb5d6",
+            "containerId": "",
+            "name": "userGet",
+            "url": "http://localhost:8080/salesApi/v1/users",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-04T22:15:56.282Z",
+            "modified": "2024-03-04T22:52:46.925Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2NDMyMGMzY2RiZGJmMGIwOWQ3NzMiLCJpYXQiOjE3MDk1OTI1NjksImV4cCI6MTcwOTU5NjE2OX0.81YKUIJc56S5472_E3vYrs6e2uWvIot0finp3Yr_FRo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "31219dab-348e-4f55-b4c5-349e875690be",
+            "colId": "6a5ab0fe-ad90-4772-b515-ed53da8cb5d6",
+            "containerId": "",
+            "name": "userPut",
+            "url": "http://localhost:8080/salesApi/v1/users/65e64320c3cdbdbf0b09d773",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-04T23:00:34.562Z",
+            "modified": "2024-03-04T23:02:45.117Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Morales\",\n  \"mail\": \"morales@kinal.edu.gt\",\n  \"password\": \"789456\",\n  \"role\": \"CLIENT_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

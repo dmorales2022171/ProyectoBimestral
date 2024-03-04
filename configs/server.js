@@ -4,15 +4,20 @@ import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import { dbConnection } from './mongo.js'
+import  userRoutes from '../src/users/user.routes.js'
+import authRoutes from '../src/auth/auth.routes.js'
 
 class Server{
     constructor(){
         this.app = express();
         this.port  = process.env.PORT;
+        this.userPath = '/salesApi/v1/users'
+        this.authPath = '/salesApi/v1/auth'
 
 
         this.conectarDB();
         this.middlewares();
+        this.routes();
 
     }
 
@@ -26,6 +31,11 @@ class Server{
         this.app.use(express.json());
         this.app.use(helmet());
         this.app.use(morgan('dev'));
+    }
+
+    routes(){
+        this.app.use(this.userPath, userRoutes);
+        this.app.use(this.authPath, authRoutes);
     }
 
 

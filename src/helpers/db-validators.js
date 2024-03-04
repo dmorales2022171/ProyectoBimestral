@@ -1,5 +1,5 @@
 import Role from '../roles/role.model.js';
-import User from '../Users/user.model.js';
+import User from '../users/user.model.js';
 
 export const isValidRole = async (role = '') => {
     const existsRol = await Role.findOne({ role });
@@ -8,12 +8,13 @@ export const isValidRole = async (role = '') => {
     }
 }
 
-export const existsMail = async (mail = '') => {
-    const existMail = await User.findOne({ mail });
-    if (existMail) {
-        throw new Error(`the mail ${mail} has already been registered`)
+export const existsMail = async ( mail = '') =>{
+    const existsMail = await User.findOne({mail});
+    if(existsMail){
+        throw new Error (`the mail ${mail} has already been registered`)
     }
 }
+
 
 export const existsUserById = async (id = '') => {
     const existsUser  = await User.findById(id);
