@@ -1,5 +1,6 @@
 import Role from '../roles/role.model.js';
-import User from '../users/user.model.js';
+import User from '../Users/user.model.js';
+import Category from '../categories/category.model.js'
 
 export const isValidRole = async (role = '') => {
     const existsRol = await Role.findOne({ role });
@@ -20,5 +21,12 @@ export const existsUserById = async (id = '') => {
     const existsUser  = await User.findById(id);
     if(!existsUser){
         throw new Error(`The user with id:${id}, doesn't exist in the database`);
+    }
+}
+
+export const existCategory = async (name = '') =>{
+    const existCategory = await Category.findOne({name});
+    if(existCategory){
+        throw new Error (`the caegory ${name} has already been registered`)
     }
 }

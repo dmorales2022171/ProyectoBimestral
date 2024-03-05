@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "categoryColletion",
+    "dateExported": "2024-03-05T17:05:16.994Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "9be79f41-9e74-439b-a688-7fe9e2d3ab23",
+            "colId": "6236d56c-2f84-4ac0-86ba-c48c650714d3",
+            "containerId": "",
+            "name": "categoryPost",
+            "url": "http://localhost:8080/salesApi/v1/categories",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-05T09:02:18.025Z",
+            "modified": "2024-03-05T09:07:23.643Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Higiene\",\n  \"description\": \"Pasillo de productos de higiene personal \"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
