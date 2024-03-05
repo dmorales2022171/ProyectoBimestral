@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "categoryColletion",
-    "dateExported": "2024-03-05T17:05:16.994Z",
+    "dateExported": "2024-03-05T22:46:28.121Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,14 +14,78 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-05T09:02:18.025Z",
-            "modified": "2024-03-05T09:07:23.643Z",
+            "modified": "2024-03-05T21:53:37.894Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"Higiene\",\n  \"description\": \"Pasillo de productos de higiene personal \"\n}",
+                "raw": "{\n  \"name\": \"vivo\",\n  \"description\": \"madre\"\n}",
                 "form": []
             },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "be19e08d-bad8-426b-b50c-73f5608be029",
+            "colId": "6236d56c-2f84-4ac0-86ba-c48c650714d3",
+            "containerId": "",
+            "name": "categoryGet",
+            "url": "http://localhost:8080/salesApi/v1/categories",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-05T19:58:22.842Z",
+            "modified": "2024-03-05T21:42:38.169Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NzljNWFlYjBmN2Y5ZDFjNjdjMzEiLCJpYXQiOjE3MDk2NzQ2NDgsImV4cCI6MTcwOTY3ODI0OH0.i08zA-bqccN6uqB6czFcqJrP0GqpvpbrWZSTaYvjpSU"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "354fee04-0320-4707-b13a-69ccd84aed8f",
+            "colId": "6236d56c-2f84-4ac0-86ba-c48c650714d3",
+            "containerId": "",
+            "name": "categoryPut",
+            "url": "http://localhost:8080/salesApi/v1/categories/65e77a6c7ed3223edd51c01c",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-05T20:37:47.897Z",
+            "modified": "2024-03-05T22:24:18.151Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NzlhM2FlYjBmN2Y5ZDFjNjdjMmUiLCJpYXQiOjE3MDk2NzczNDAsImV4cCI6MTcwOTY4MDk0MH0.52kBWZEN7UcVnlMAX9hg_JmCdNPOfEwWBaornNzO4xU"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"carlossssssssssssssssssssssssss\",\n  \"description\": \"juarezzzzzzzzzzzzzzzzzz\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3fdac4aa-9e22-4e94-b41a-9e655a4c10f2",
+            "colId": "6236d56c-2f84-4ac0-86ba-c48c650714d3",
+            "containerId": "",
+            "name": "categoryDelete",
+            "url": "http://localhost:8080/salesApi/v1/categories/65e77a6c7ed3223edd51c01c",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-03-05T22:35:00.270Z",
+            "modified": "2024-03-05T22:45:42.957Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NzlhM2FlYjBmN2Y5ZDFjNjdjMmUiLCJpYXQiOjE3MDk2Nzg1NTgsImV4cCI6MTcwOTY4MjE1OH0.tPVQ-3Z2b9cElDphrZixPxoz0lOB38eWtKKdSbP7sho"
+                }
+            ],
+            "params": [],
             "tests": []
         }
     ]

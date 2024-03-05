@@ -30,6 +30,6 @@ export const hasRoleAuthorized = (...roles) => {
                 msg: `The service requires one of the following authorized roles ${roles}`
             })
         }
-        next();
     }
+    next();
 }

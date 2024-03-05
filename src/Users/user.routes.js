@@ -5,6 +5,7 @@ import { userDelete, userGet, userPost, userPut } from './user.controller.js';
 import { existsMail, existsUserById } from '../helpers/db-validators.js';
 import { validateFilds } from '../middlewares/validar-campos.js';
 import { validateJWT } from '../middlewares/validate-jwt.js';
+import { hasRoleAuthorized } from '../middlewares/validate.role.js';
 
 const router = Router();
 
