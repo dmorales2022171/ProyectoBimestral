@@ -1,66 +1,90 @@
 {
     "client": "Thunder Client",
     "collectionName": "userCollections",
-    "dateExported": "2024-03-04T23:23:30.757Z",
+    "dateExported": "2024-03-05T08:28:03.262Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "c38b4f3a-b047-4107-aa15-5c13f2299606",
-            "colId": "6a5ab0fe-ad90-4772-b515-ed53da8cb5d6",
+            "_id": "bef2a8e8-e9c5-4750-b88e-ea0a2cb468cf",
+            "colId": "58b49054-ab9a-4ea2-ad1b-07759af29b43",
             "containerId": "",
             "name": "userPost",
             "url": "http://localhost:8080/salesApi/v1/users",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-04T21:34:35.055Z",
-            "modified": "2024-03-04T21:55:24.616Z",
+            "created": "2024-03-05T01:09:37.203Z",
+            "modified": "2024-03-05T02:19:05.033Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"Luis Monterroso\",\n  \"mail\": \"lmonterroso-2022135@kinal.edu.gt\",\n  \"password\": \"123456\"\n}",
+                "raw": "{\n  \"name\": \"Diego Morales\",\n  \"mail\": \"dmorales-2022171@kinal.edu.gt\",\n  \"password\": \"123456\",\n  \"role\": \"ADMIN_ROLE\"\n}",
                 "form": []
             },
-            "reqType": "post",
             "tests": []
         },
         {
-            "_id": "436df8c2-7a8b-4ad8-98dc-77faf1e6f6e0",
-            "colId": "6a5ab0fe-ad90-4772-b515-ed53da8cb5d6",
+            "_id": "a74c3d34-1500-4792-b7b2-a445b4ca374e",
+            "colId": "58b49054-ab9a-4ea2-ad1b-07759af29b43",
             "containerId": "",
             "name": "userGet",
             "url": "http://localhost:8080/salesApi/v1/users",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-03-04T22:15:56.282Z",
-            "modified": "2024-03-04T22:52:46.925Z",
+            "created": "2024-03-05T01:09:37.204Z",
+            "modified": "2024-03-05T03:13:06.150Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2NDMyMGMzY2RiZGJmMGIwOWQ3NzMiLCJpYXQiOjE3MDk1OTI1NjksImV4cCI6MTcwOTU5NjE2OX0.81YKUIJc56S5472_E3vYrs6e2uWvIot0finp3Yr_FRo"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2ODEwNTk1MWQ4MzMwYTMxNDg2NmIiLCJpYXQiOjE3MDk2MDgzNDUsImV4cCI6MTcwOTYxMTk0NX0.9Z938Tad5BpOHULg9ZkRYSa0Tbf-pMIhXQCqjW9BZgo"
                 }
             ],
             "params": [],
             "tests": []
         },
         {
-            "_id": "31219dab-348e-4f55-b4c5-349e875690be",
-            "colId": "6a5ab0fe-ad90-4772-b515-ed53da8cb5d6",
+            "_id": "4d7d293b-6cdb-43eb-9a0f-6bb46ac94739",
+            "colId": "58b49054-ab9a-4ea2-ad1b-07759af29b43",
             "containerId": "",
             "name": "userPut",
-            "url": "http://localhost:8080/salesApi/v1/users/65e64320c3cdbdbf0b09d773",
+            "url": "http://localhost:8080/salesApi/v1/users/65e681273d05fc03951aea47",
             "method": "PUT",
             "sortNum": 30000,
-            "created": "2024-03-04T23:00:34.562Z",
-            "modified": "2024-03-04T23:02:45.117Z",
-            "headers": [],
+            "created": "2024-03-05T01:09:37.206Z",
+            "modified": "2024-03-05T03:13:33.885Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2ODEwNTk1MWQ4MzMwYTMxNDg2NmIiLCJpYXQiOjE3MDk2MDgzNDUsImV4cCI6MTcwOTYxMTk0NX0.9Z938Tad5BpOHULg9ZkRYSa0Tbf-pMIhXQCqjW9BZgo"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"Morales\",\n  \"mail\": \"morales@kinal.edu.gt\",\n  \"password\": \"789456\",\n  \"role\": \"CLIENT_ROLE\"\n}",
+                "raw": "{\n  \"name\": \"Diego\",\n  \"mail\": \"diego@kinal.edu.gt\",\n  \"password\": \"123456\",\n  \"role\": \"CLIENT_ROLE\"\n}",
                 "form": []
             },
+            "tests": []
+        },
+        {
+            "_id": "6b4935d2-b0de-43d7-a450-85b1fcc4a4f1",
+            "colId": "58b49054-ab9a-4ea2-ad1b-07759af29b43",
+            "containerId": "",
+            "name": "userDelete",
+            "url": "http://localhost:8080/salesApi/v1/users/diego@kinal.edu.gt",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-05T03:29:05.245Z",
+            "modified": "2024-03-05T04:51:14.643Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2ODEyNzNkMDVmYzAzOTUxYWVhNDciLCJpYXQiOjE3MDk2MTMyODQsImV4cCI6MTcwOTYxNjg4NH0.ItxO0AbOINm_5Zi9PkTBF3Lz8aQJby98o3JphvLnieE"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
             "tests": []
         }
     ]
