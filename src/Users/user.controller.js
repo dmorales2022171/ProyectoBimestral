@@ -36,20 +36,38 @@ export const userGet = async (req = request, res = response) => {
 }
 
 export const userPut = async (req, res) => {
-    const {id}  = req.params;
-    const {_id, password, ...rest} = req.body;
+    const { id } = req.params;
+    const { _id, password, ...rest } = req.body;
 
-    if(password){
+    if (password) {
         const salt = bcryptjs.genSaltSync();
         rest.password = bcryptjs.hashSync(password, salt);
     }
 
     await User.findByIdAndUpdate(id, rest);
 
-    const user = await User.findOne({_id:id});
+    const user = await User.findOne({ _id: id });
 
     res.status(200).json({
-        msg:"User updated!",
+        msg: "User updated!",
         user
     })
 }
+
+export const userDelete = async (req, res) => {
+    const { id: userId } = req.params;
+    const { id: authUserId } = req.user;
+
+    if (userId !== authUserId) {
+        return res.status(403).json({
+            msg: "You do not have permission to change the status of this account"
+        });
+    }
+    const User = await User.findByIdAndUpdate(userId, { status: false });
+
+    res.status(200).json({
+        msg: "User status updated successfully",
+        user: updatedUser
+    });
+
+};
