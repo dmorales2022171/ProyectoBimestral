@@ -8,7 +8,7 @@ export const generateJWT = (uid = '') =>{
             payload,
             process.env.SECRETORPRIVATEKEY,
             {
-                expiresIn: '1h'
+                expiresIn: '12h'
             },
             (err, token) => {
                 err ? (console.log(err), reject('Token could not be generated')) : resolve(token);

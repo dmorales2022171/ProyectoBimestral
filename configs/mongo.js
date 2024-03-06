@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
+import bcrypt from 'bcryptjs';
 import User from "../src/users/user.model.js";
+
+const SALT_ROUNDS = 10;
 
 export const dbConnection = async () => {
     try {
@@ -15,14 +18,14 @@ export const dbConnection = async () => {
         mongoose.connection.on('connected', async () => {
             console.log('MongoDB | Connected to MongoDB');
 
-            // Verificar si ya existe un usuario administrador
             const adminUser = await User.findOne({ role: 'ADMIN_ROLE' });
             if (!adminUser) {
-                // Crear un usuario administrador predeterminado
+
+                const hashedPassword = await bcrypt.hash('123456', SALT_ROUNDS);
                 await User.create({
                     name: 'Admin',
-                    mail: 'admin@example.com',
-                    password: 'adminPassword', // ¡Recuerda cambiar esto por una contraseña segura!
+                    mail: 'admin@gmail.com',
+                    password: hashedPassword,
                     role: 'ADMIN_ROLE'
                 });
                 console.log('Default admin user created successfully');
