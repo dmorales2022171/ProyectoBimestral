@@ -1,6 +1,6 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
-const productSchema = Schema({
+const productSchema = mongoose.Schema({
     productName:{
         type: String,
         required: [true, "product name is require"]
@@ -20,6 +20,10 @@ const productSchema = Schema({
     category:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category'
+    },
+    sales:{
+        type: Number,
+        default: 0
     },
     status: {
         type: Boolean,

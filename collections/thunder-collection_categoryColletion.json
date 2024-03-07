@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "categoryColletion",
-    "dateExported": "2024-03-05T22:46:28.121Z",
+    "dateExported": "2024-03-07T13:59:38.195Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -34,11 +34,11 @@
             "method": "GET",
             "sortNum": 20000,
             "created": "2024-03-05T19:58:22.842Z",
-            "modified": "2024-03-05T21:42:38.169Z",
+            "modified": "2024-03-07T06:37:08.300Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NzljNWFlYjBmN2Y5ZDFjNjdjMzEiLCJpYXQiOjE3MDk2NzQ2NDgsImV4cCI6MTcwOTY3ODI0OH0.i08zA-bqccN6uqB6czFcqJrP0GqpvpbrWZSTaYvjpSU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZGI5NmYzN2U5YTg1NGEzZTE0ZmEiLCJpYXQiOjE3MDk3OTM0MTksImV4cCI6MTcwOTgzNjYxOX0.oF8TfFeWOhQo48mjud82AvTjG7P86x72Un6w0AMmvSU"
                 }
             ],
             "params": [],
@@ -50,23 +50,24 @@
             "colId": "6236d56c-2f84-4ac0-86ba-c48c650714d3",
             "containerId": "",
             "name": "categoryPut",
-            "url": "http://localhost:8080/salesApi/v1/categories/65e77a6c7ed3223edd51c01c",
+            "url": "http://localhost:8080/salesApi/v1/categories/65e7946f67dfd1f945229a76",
             "method": "PUT",
             "sortNum": 40000,
             "created": "2024-03-05T20:37:47.897Z",
-            "modified": "2024-03-05T22:24:18.151Z",
+            "modified": "2024-03-06T09:09:01.546Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3NzlhM2FlYjBmN2Y5ZDFjNjdjMmUiLCJpYXQiOjE3MDk2NzczNDAsImV4cCI6MTcwOTY4MDk0MH0.52kBWZEN7UcVnlMAX9hg_JmCdNPOfEwWBaornNzO4xU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZGI5NmYzN2U5YTg1NGEzZTE0ZmEiLCJpYXQiOjE3MDk3MTU5OTYsImV4cCI6MTcwOTc1OTE5Nn0.LtOEB4NhDygHWLfWG7VY_ya5by-zcKYVKw5wDsMLN9Q"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\" : \"carlossssssssssssssssssssssssss\",\n  \"description\": \"juarezzzzzzzzzzzzzzzzzz\"\n}",
+                "raw": "{\n  \"name\" : \"Carnes\",\n  \"description\": \"productos de origen animal\"\n}",
                 "form": []
             },
+            "reqType": "put",
             "tests": []
         },
         {

@@ -1,10 +1,10 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { productGet, productPost } from "../products/product.controller.js";
+import { mostSelledProducts, productDelete, productGet, productGetByCategory, productGetByName, productPost, productPut, productsOutStock } from "../products/product.controller.js";
 import { validateFilds } from "../middlewares/validar-campos.js";
 import { validateJWT } from "../middlewares/validate-jwt.js";
 import { isAdminRole, hasRoleAuthorized } from "../middlewares/validate.role.js";
-import { existProduct, validateCategoryExisting } from "../helpers/db-validators.js";
+import { existProduct, existProductById, validateCategoryExisting } from "../helpers/db-validators.js";
 
 const router = Router();
 
@@ -27,6 +27,55 @@ router.get(
     '/',
     validateJWT,
     productGet
+)
+
+router.put(
+    "/:id",
+    [
+        check('id', 'it is not a valid id').isMongoId(),
+        check('id').custom(existProductById),  
+        validateFilds
+    ],
+    productPut
+)
+
+router.delete(
+    '/:id',
+    [
+        check('id').custom(existProductById),  
+        validateFilds      
+    ],
+    productDelete
+)
+
+router.get(
+    '/productByName/:productName',
+    [
+        validateJWT,
+        validateFilds
+    ],
+    productGetByName
+)
+
+router.get(
+    '/productsOutOfStock',
+    [
+        validateJWT,
+        isAdminRole,
+        validateFilds
+    ],
+    productsOutStock
+)
+
+router.get(
+    '/mostSelledProducts',
+    validateJWT,
+    mostSelledProducts
+)
+
+router.get(
+    '/productByCategory/:category',
+    productGetByCategory
 )
 
 export default router;

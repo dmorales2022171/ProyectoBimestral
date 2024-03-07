@@ -1,7 +1,6 @@
 'use strict'
 
 import Category from '../categories/category.model.js';
-import User from '../users/user.model.js'
 import { request, response } from 'express';
 
 export const categoryPost = async (req, res) => {
@@ -18,18 +17,34 @@ export const categoryPost = async (req, res) => {
 export const categoryGet = async (req = request, res = response) => {
     const { limit, from } = req.body;
     const query = { status: true };
+    const { role: authUser } = req.user;
 
-    const [total, categories] = await Promise.all([
-        Category.countDocuments(query),
-        Category.find(query)
-            .skip(Number(from))
-            .limit(Number(limit))
-    ]);
+    if (authUser == "ADMIN_ROLE") {
+        const [total, categories] = await Promise.all([
+            Category.countDocuments(query),
+            Category.find(query)
+                .skip(Number(from))
+                .limit(Number(limit))
+        ]);
 
-    res.status(200).json({
-        total,
-        categories
-    })
+        res.status(200).json({
+            total,
+            categories
+        })
+    } else if (authUser == "CLIENT_ROLE") {
+        const [total, categories] = await Promise.all([
+            Category.countDocuments(query),
+            Category.find(query, { _id: 0 })
+                .skip(Number(from))
+                .limit(Number(limit))
+        ])
+
+        res.status(200).json({
+            total,
+            categories
+        })
+    }
+
 }
 
 export const categoryPut = async (req, res) => {
@@ -46,9 +61,9 @@ export const categoryPut = async (req, res) => {
 
 }
 
-export const categoryDelete = async (req, res ) => {
-    const {id} = req.params;
-    const category = await Category.findByIdAndUpdate(id, {status: false});
+export const categoryDelete = async (req, res) => {
+    const { id } = req.params;
+    const category = await Category.findByIdAndUpdate(id, { status: false });
     const userAuthenticated = req.user;
 
     res.status(200).json({

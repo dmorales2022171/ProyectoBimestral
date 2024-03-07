@@ -1,0 +1,175 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "productCollection",
+    "dateExported": "2024-03-07T13:59:26.895Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "a5ab13b1-7322-47b7-9bbe-626a5c2ff098",
+            "colId": "72d34ac3-fc0b-436a-b858-94643af6c04d",
+            "containerId": "",
+            "name": "productPost",
+            "url": "http://localhost:8080/salesApi/v1/products",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-06T10:24:03.956Z",
+            "modified": "2024-03-07T05:21:50.684Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"productName\": \"hhh\",\n  \"description\": \"pelota de plastico\",\n  \"price\": 6,\n  \"stock\": 1,\n  \"category\": \"Limpieza\"\n\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "1acb908c-7bd2-4a46-b31d-87c02df19fa5",
+            "colId": "72d34ac3-fc0b-436a-b858-94643af6c04d",
+            "containerId": "",
+            "name": "productGet",
+            "url": "http://localhost:8080/salesApi/v1/products",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-06T11:48:26.985Z",
+            "modified": "2024-03-07T05:42:19.288Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4OTM0NTI4OWNiOGYwY2Q0NzAyOGIiLCJpYXQiOjE3MDk3OTAxMjMsImV4cCI6MTcwOTgzMzMyM30.3FyRxpBdkXXwYJNPNarX5mFxNWkj5e3b5x_N1Q5q4uI"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "0291b75a-6715-4b8f-90b4-14a20763c186",
+            "colId": "72d34ac3-fc0b-436a-b858-94643af6c04d",
+            "containerId": "",
+            "name": "productPut",
+            "url": "http://localhost:8080/salesApi/v1/products/65e848682ed91f04e2774409",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-06T22:58:49.381Z",
+            "modified": "2024-03-07T03:05:15.092Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"productName\": \"papas\",\n  \"description\": \"papas de cultivo\",\n  \"price\": 2,\n  \"stock\": 2,\n  \"category\": \"Limpieza\"\n}",
+                "form": []
+            },
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "8378df62-dbca-41b9-a8fe-793d4377c765",
+            "colId": "72d34ac3-fc0b-436a-b858-94643af6c04d",
+            "containerId": "",
+            "name": "productoDelete",
+            "url": "http://localhost:8080/salesApi/v1/products/65e848682ed91f04e2774409a",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-07T02:59:26.397Z",
+            "modified": "2024-03-07T03:46:11.003Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5e991107-2f98-4cd2-a49f-6fedc595ead1",
+            "colId": "72d34ac3-fc0b-436a-b858-94643af6c04d",
+            "containerId": "",
+            "name": "productByName",
+            "url": "http://localhost:8080/salesApi/v1/products/productByName/hhh",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-07T03:12:22.957Z",
+            "modified": "2024-03-07T06:22:58.528Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4OTM0NTI4OWNiOGYwY2Q0NzAyOGIiLCJpYXQiOjE3MDk3OTI1NjksImV4cCI6MTcwOTgzNTc2OX0.jL9DJVA2rcS8Z-aZRvpLFKalJurpvCYGYoL6gHTy9Pg"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f9109283-37a8-4732-8073-cd416c2b51ed",
+            "colId": "72d34ac3-fc0b-436a-b858-94643af6c04d",
+            "containerId": "",
+            "name": " ProductsOutOfStock",
+            "url": "http://localhost:8080/salesApi/v1/products/productsOutOfStock",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-07T03:54:08.194Z",
+            "modified": "2024-03-07T06:26:56.477Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZGI5NmYzN2U5YTg1NGEzZTE0ZmEiLCJpYXQiOjE3MDk3OTI4MDYsImV4cCI6MTcwOTgzNjAwNn0.0_VZx1XkrCOnwFaapmPpM8MS1rvstJ3ZNc_AYaQtf1k"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "35014299-0741-4101-9b3f-028fe45b9719",
+            "colId": "72d34ac3-fc0b-436a-b858-94643af6c04d",
+            "containerId": "",
+            "name": "mostSelledProducts",
+            "url": "http://localhost:8080/salesApi/v1/products/mostSelledProducts",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-03-07T04:35:11.245Z",
+            "modified": "2024-03-07T06:29:51.425Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4OTM0NTI4OWNiOGYwY2Q0NzAyOGIiLCJpYXQiOjE3MDk3OTI5NzgsImV4cCI6MTcwOTgzNjE3OH0.NvranaPjpKt4ca5MwxCpsC5teL5H2RcmNq9di8LFYMk"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "03c7a44c-9159-45a3-baa9-2c2c6e4346a4",
+            "colId": "72d34ac3-fc0b-436a-b858-94643af6c04d",
+            "containerId": "",
+            "name": "existing category",
+            "url": "http://localhost:8080/salesApi/v1/categories",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-03-07T05:39:15.262Z",
+            "modified": "2024-03-07T05:40:07.084Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZGI5NmYzN2U5YTg1NGEzZTE0ZmEiLCJpYXQiOjE3MDk3ODk5OTEsImV4cCI6MTcwOTgzMzE5MX0.MEQqLWWSCXFc5MybbE6085tsUBpwezNjquxPqrqHuS0"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "c3cab515-4186-4653-ae1c-19c70f35796b",
+            "colId": "72d34ac3-fc0b-436a-b858-94643af6c04d",
+            "containerId": "",
+            "name": "porductByCategory",
+            "url": "http://localhost:8080/salesApi/v1/products/productByCategory/Limpieza",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-03-07T13:39:58.809Z",
+            "modified": "2024-03-07T13:43:34.053Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

@@ -45,6 +45,13 @@ export const existCategoryById = async (id = '') => {
     }
 }
 
+export const existProductById = async (id = '') => {
+    const product = await Product.findById(id);
+    if(!product){
+        throw new Error(`The product with id: ${id} does not exist in the database`)
+    }
+}
+
 
 export const existCategory = async (name = '') => {
     const existCategory = await Category.findOne({ name });
