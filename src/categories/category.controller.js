@@ -1,6 +1,7 @@
 'use strict'
 
 import Category from '../categories/category.model.js';
+import Product from '../products/product.model.js'
 import { request, response } from 'express';
 
 export const categoryPost = async (req, res) => {
@@ -63,13 +64,26 @@ export const categoryPut = async (req, res) => {
 
 export const categoryDelete = async (req, res) => {
     const { id } = req.params;
-    const category = await Category.findByIdAndUpdate(id, { status: false });
-    const userAuthenticated = req.user;
+    const category = await Category.findById(id);
+
+    if (!category) {
+        return res.status(404).json({ msg: 'Category not found' });
+    }
+
+    let defaultCategory = await Category.findOne({ name: 'Default' });
+
+    if (!defaultCategory) {
+        defaultCategory = new Category({ name: 'Default', description: 'Default category' });
+        await defaultCategory.save();
+    }
+
+    const products = await Product.updateMany({ category: id }, { category: defaultCategory._id });
+
+    await Category.findByIdAndDelete(id);
 
     res.status(200).json({
-        msg: "the category has been deleted",
+        msg: "The category has been deleted",
         category,
-        userAuthenticated
-    })
-
-}
+        products
+    });
+};
