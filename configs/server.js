@@ -8,6 +8,7 @@ import  userRoutes from '../src/users/user.routes.js'
 import authRoutes from '../src/auth/auth.routes.js'
 import categoryRoutes from '../src/categories/category.routes.js'
 import productRoutes from '../src/products/producto.routes.js'
+import billsRoutes from '../src/bills/invoice.routes.js'
 
 class Server{
     constructor(){
@@ -17,6 +18,7 @@ class Server{
         this.authPath = '/salesApi/v1/auth'
         this.categoryPath = '/salesApi/v1/categories'
         this.productPath = '/salesApi/v1/products'
+        this.InvoicePath = '/salesApi/v1/bills'
 
 
         this.conectarDB();
@@ -42,6 +44,7 @@ class Server{
         this.app.use(this.authPath, authRoutes);
         this.app.use(this.categoryPath, categoryRoutes);
         this.app.use(this.productPath, productRoutes);
+        this.app.use(this.InvoicePath, billsRoutes);
     }
 
 

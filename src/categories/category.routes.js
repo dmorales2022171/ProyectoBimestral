@@ -12,6 +12,8 @@ const router = Router();
 router.post(
     "/",
     [
+        validateJWT,
+        isAdminRole,
         check("name", "the name cannot be empty").not().isEmpty(),
         check("name").custom(existCategory),
         check("description", "the description canno be empty").not().isEmpty(),

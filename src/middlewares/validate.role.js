@@ -11,7 +11,7 @@ export const isAdminRole = (req, res, next) => {
 
     if (role !== "ADMIN_ROLE") {
         return res.status(401).json({
-            msg: `${name} is not an ADMIN_ROLE, you cannot use this endpoint`
+            msg: `${name} is not an ADMIN_ROLE`
         })
     }
     next();

@@ -37,7 +37,7 @@ router.put(
 )
 
 router.delete(
-    "/:mail",
+    "/:id",
     [
         validateJWT
     ],

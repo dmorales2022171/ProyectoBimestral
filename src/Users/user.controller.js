@@ -63,11 +63,12 @@ export const userDelete = async (req, res) => {
             msg: "You do not have permission to change the status of this account"
         });
     }
-    const User = await User.findByIdAndUpdate(userId, { status: false });
+
+    const user = await User.findByIdAndUpdate(userId, { status: false });
 
     res.status(200).json({
-        msg: "User status updated successfully",
-        user: updatedUser
+        msg: "User deleted",
+        user
     });
 
 };

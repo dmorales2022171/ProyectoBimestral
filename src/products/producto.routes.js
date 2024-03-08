@@ -11,29 +11,34 @@ const router = Router();
 router.post(
     '/',
     [
-    check('productName', 'the name product cannot be empty').not().isEmpty(),
-    check('productName').custom(existProduct),
-    check('description', 'the description cannot be empty').not().isEmpty(),
-    check('price', 'the price cannot be empty').isNumeric().withMessage('The price must be a number'),
-    check('stock', 'The stock of the product is required').not().isEmpty(),
-    check('category', 'The category of the product is required').not().isEmpty(),
-    validateFilds
+        validateJWT,
+        isAdminRole,
+        check('productName', 'the name product cannot be empty').not().isEmpty(),
+        check('productName').custom(existProduct),
+        check('description', 'the description cannot be empty').not().isEmpty(),
+        check('price', 'the price cannot be empty').isNumeric().withMessage('The price must be a number'),
+        check('stock', 'The stock of the product is required').not().isEmpty(),
+        check('category', 'The category of the product is required').not().isEmpty(),
+        validateFilds
     ],
     productPost
-    
+
 )
 
 router.get(
     '/',
     validateJWT,
+    isAdminRole,
     productGet
 )
 
 router.put(
     "/:id",
     [
+        validateJWT,
+        isAdminRole,
         check('id', 'it is not a valid id').isMongoId(),
-        check('id').custom(existProductById),  
+        check('id').custom(existProductById),
         validateFilds
     ],
     productPut
@@ -42,8 +47,10 @@ router.put(
 router.delete(
     '/:id',
     [
-        check('id').custom(existProductById),  
-        validateFilds      
+        validateJWT,
+        isAdminRole,
+        check('id').custom(existProductById),
+        validateFilds
     ],
     productDelete
 )
@@ -51,8 +58,7 @@ router.delete(
 router.get(
     '/productByName/:productName',
     [
-        validateJWT,
-        validateFilds
+        validateJWT
     ],
     productGetByName
 )
