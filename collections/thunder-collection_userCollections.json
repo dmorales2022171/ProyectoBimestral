@@ -1,0 +1,93 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "userCollections",
+    "dateExported": "2024-03-09T04:57:24.192Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "bef2a8e8-e9c5-4750-b88e-ea0a2cb468cf",
+            "colId": "58b49054-ab9a-4ea2-ad1b-07759af29b43",
+            "containerId": "",
+            "name": "userPost",
+            "url": "http://localhost:8080/salesApi/v1/users",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-05T01:09:37.203Z",
+            "modified": "2024-03-05T20:00:05.785Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Luis\",\n  \"mail\": \"lmonterroso@kinal.edu.gt\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "a74c3d34-1500-4792-b7b2-a445b4ca374e",
+            "colId": "58b49054-ab9a-4ea2-ad1b-07759af29b43",
+            "containerId": "",
+            "name": "userGet",
+            "url": "http://localhost:8080/salesApi/v1/users",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-05T01:09:37.204Z",
+            "modified": "2024-03-06T03:29:24.122Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZGI5NmYzN2U5YTg1NGEzZTE0ZmEiLCJpYXQiOjE3MDk2OTM4NjMsImV4cCI6MTcwOTY5NzQ2M30.aPhGkelr2Njltlr955ylf0DQnZ8YOjx-ZrSuWDW0h6I"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "4d7d293b-6cdb-43eb-9a0f-6bb46ac94739",
+            "colId": "58b49054-ab9a-4ea2-ad1b-07759af29b43",
+            "containerId": "",
+            "name": "userPut",
+            "url": "http://localhost:8080/salesApi/v1/users/65e681273d05fc03951aea47",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-05T01:09:37.206Z",
+            "modified": "2024-03-05T03:13:33.885Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2ODEwNTk1MWQ4MzMwYTMxNDg2NmIiLCJpYXQiOjE3MDk2MDgzNDUsImV4cCI6MTcwOTYxMTk0NX0.9Z938Tad5BpOHULg9ZkRYSa0Tbf-pMIhXQCqjW9BZgo"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Diego\",\n  \"mail\": \"diego@kinal.edu.gt\",\n  \"password\": \"123456\",\n  \"role\": \"CLIENT_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6b4935d2-b0de-43d7-a450-85b1fcc4a4f1",
+            "colId": "58b49054-ab9a-4ea2-ad1b-07759af29b43",
+            "containerId": "",
+            "name": "userDelete",
+            "url": "http://localhost:8080/salesApi/v1/users/65e89345289cb8f0cd47028b",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-05T03:29:05.245Z",
+            "modified": "2024-03-08T07:36:29.516Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4OTM0NTI4OWNiOGYwY2Q0NzAyOGIiLCJpYXQiOjE3MDk4ODMzNjcsImV4cCI6MTcwOTkyNjU2N30.Ud-KHfGs1TWM61fn6PdMvZDDVWMZpnHWajeSuZYubEE"
+                }
+            ],
+            "params": [],
+            "reqType": "del",
+            "tests": []
+        }
+    ]
+}

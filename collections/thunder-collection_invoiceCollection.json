@@ -1,0 +1,77 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "invoiceCollection",
+    "dateExported": "2024-03-09T04:57:06.169Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "09e99592-34e6-4a69-94b5-e5edd08a8826",
+            "colId": "689f78a5-f4f4-4dfa-a4d5-b1551890643a",
+            "containerId": "",
+            "name": "invoicePost",
+            "url": "http://localhost:8080/salesApi/v1/bills",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-08T08:32:53.841Z",
+            "modified": "2024-03-09T03:11:34.726Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZGI5NmYzN2U5YTg1NGEzZTE0ZmEiLCJpYXQiOjE3MDk5NDY5MTksImV4cCI6MTcwOTk5MDExOX0.qWWzG3Arci8xoad0NnWh4S42jk_jOp-ZVEo-N8rOiwc"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"products\": [\n    {\n      \"product\": \"pelotsssaa\",\n      \"quantity\": 1,\n      \"price\": 111\n    },\n    {\n      \"product\": \"u\",\n      \"quantity\": 2,\n      \"price\": 111\n    }\n  ],\n  \"user\": \"lmonterroso@kinal.edu.gt\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "8dde2207-77b5-4ea1-b126-f610f8b0ed5a",
+            "colId": "689f78a5-f4f4-4dfa-a4d5-b1551890643a",
+            "containerId": "",
+            "name": "invoiceGet",
+            "url": "http://localhost:8080/salesApi/v1/bills",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-09T03:41:34.895Z",
+            "modified": "2024-03-09T04:53:51.450Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4OTM0NTI4OWNiOGYwY2Q0NzAyOGIiLCJpYXQiOjE3MDk5NjAwMDgsImV4cCI6MTcxMDAwMzIwOH0.vmKyGzqtV9Tboc0aTOVjOrZy3d70V4WV1_2P-8_Sn4s"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0e8616dd-1ff6-46ae-bfe3-0ebf007f1039",
+            "colId": "689f78a5-f4f4-4dfa-a4d5-b1551890643a",
+            "containerId": "",
+            "name": "invoicePut",
+            "url": "http://localhost:8080/salesApi/v1/bills/65ebc7bc3ef19da5f277d655",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-09T04:17:58.635Z",
+            "modified": "2024-03-09T04:54:21.101Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4OTM0NTI4OWNiOGYwY2Q0NzAyOGIiLCJpYXQiOjE3MDk5NjAwMDgsImV4cCI6MTcxMDAwMzIwOH0.vmKyGzqtV9Tboc0aTOVjOrZy3d70V4WV1_2P-8_Sn4s"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"user\": \"65e89345289cb8f0cd47028b\",\r\n    \"products\": [\r\n        {\r\n            \"product\": \"65e94e7aa27e30fad696b118\", \r\n            \"quantity\": 3,\r\n            \"price\": 50\r\n        }\r\n    ],\r\n    \"total\": 150\r\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
