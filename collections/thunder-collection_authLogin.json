@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "authLogin",
-    "dateExported": "2024-03-05T08:27:19.609Z",
+    "dateExported": "2024-03-09T04:57:28.788Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-05T01:09:29.790Z",
-            "modified": "2024-03-05T04:34:44.137Z",
+            "modified": "2024-03-09T03:52:32.123Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"mail\": \"diego@kinal.edu.gt\",\n  \"password\": \"123456\"\n}",
+                "raw": "{\n  \"mail\": \"lmonterroso@kinal.edu.gt\",\n  \"password\": \"123456\"\n}",
                 "form": []
             },
             "reqType": "post",

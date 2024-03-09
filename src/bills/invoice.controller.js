@@ -2,62 +2,144 @@ import Product from '../products/product.model.js';
 import Invoice from '../bills/invoice.model.js';
 import User from '../users/user.model.js';
 
-
 export const invoicePost = async (req, res) => {
     const data = req.body;
 
     try {
-        const user = await User.findOne({ _id: data.user });
+        const user = await User.findOne({ mail: data.user });
+
         if (!user) {
             return res.status(404).json({
-                msg: "User not found"
+                msg: 'User not found'
             });
         }
 
-        const products = data.products;
+        const invoiceProducts = [];
+        let total = 0;
 
-        for (const productInfo of products) {
-            const product = await Product.findById(productInfo.product);
+        for (const item of data.products) {
+            const product = await Product.findOne({ productName: item.product });
+
             if (!product) {
                 return res.status(404).json({
-                    msg: `Product with ID ${productInfo.product} not found`
+                    msg: `Product "${item.product}" not found`
                 });
             }
-            if (productInfo.quantity > product.stock) {
+
+            if (item.quantity > product.stock) {
                 return res.status(400).json({
-                    msg: `Quantity exceeds available stock for product ${product.productName}`
+                    msg: `Quantity of "${item.product}" cannot be greater than stock`
                 });
             }
+
+            const productTotal = item.quantity * item.price;
+            total += productTotal;
+
+            invoiceProducts.push({
+                product: product._id,
+                quantity: item.quantity,
+                price: item.price,
+                productName: product.productName
+            });
+
+            product.stock -= item.quantity;
+            await product.save();
         }
 
-        const total = products.reduce((acc, productInfo) => {
-            return acc + productInfo.price * productInfo.quantity;
-        }, 0);
-
         const invoice = new Invoice({
+            products: invoiceProducts,
             user: user._id,
-            products: data.products,
             total: total
         });
 
         await invoice.save();
 
-        // Actualizar el stock de los productos
-        for (const productInfo of products) {
-            const product = await Product.findById(productInfo.product);
-            product.stock -= productInfo.quantity;
-            await product.save();
-        }
+        const userEmail = user.mail;
 
-        return res.status(200).json({
-            user: user.name,
-            invoice
+        res.status(200).json({
+            invoice: {
+                date: invoice.date,
+                _id: invoice._id,
+                user: userEmail,
+                products: invoiceProducts.map(product => ({
+                    product: product.productName,
+                    quantity: product.quantity,
+                    price: product.price
+                })),
+                total: total
+            }
         });
     } catch (error) {
-        console.error('Error creating invoice:', error);
-        return res.status(500).json({
-            msg: "Internal server error"
+        console.error(error);
+        res.status(500).json({
+            msg: 'Internal server error'
         });
     }
 };
 
+export const invoiceGet = async (req, res) => {
+    try {
+        const userId = req.user.id;
+        const invoices = await Invoice.find({ user: userId });
+        const mappedInvoices = await Promise.all(invoices.map(async (invoice) => {
+            const user = await User.findById(invoice.user);
+            const userEmail = user ? user.mail : 'Unknown';
+
+            const products = await Promise.all(invoice.products.map(async (product) => {
+                const productInfo = await Product.findById(product.product);
+                const productName = productInfo ? productInfo.productName : 'Unknown';
+                return {
+                    quantity: product.quantity,
+                    price: product.price,
+                    productName: productName
+                };
+            }));
+
+            return {
+                _id: invoice._id,
+                user: userEmail,
+                products: products,
+                total: invoice.total
+            };
+        }));
+
+        res.status(200).json({
+            invoices: mappedInvoices
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            msg: 'Internal server error'
+        });
+    }
+};
+
+export const invoicePut = async (req, res) => {
+    try {
+        const user = await User.findById(req.body.user);
+    
+        if (!user) {
+            return res.status(404).json({
+                msg: 'User not found'
+            });
+        }
+
+        const updatedInvoice = await Invoice.findByIdAndUpdate(req.params.id, { user: req.body.user, ...req.body }, { new: true });
+    
+        if (!updatedInvoice) {
+            return res.status(404).json({
+                msg: 'Invoice not found'
+            });
+        }
+    
+        res.status(200).json({
+            msg: 'Invoice updated successfully',
+            invoice: updatedInvoice
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            msg: 'Internal server error'
+        });
+    }
+};

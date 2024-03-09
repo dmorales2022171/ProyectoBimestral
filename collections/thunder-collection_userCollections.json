@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "userCollections",
-    "dateExported": "2024-03-05T08:28:03.262Z",
+    "dateExported": "2024-03-09T04:57:24.192Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,14 +14,15 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-05T01:09:37.203Z",
-            "modified": "2024-03-05T02:19:05.033Z",
+            "modified": "2024-03-05T20:00:05.785Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"Diego Morales\",\n  \"mail\": \"dmorales-2022171@kinal.edu.gt\",\n  \"password\": \"123456\",\n  \"role\": \"ADMIN_ROLE\"\n}",
+                "raw": "{\n  \"name\": \"Luis\",\n  \"mail\": \"lmonterroso@kinal.edu.gt\",\n  \"password\": \"123456\"\n}",
                 "form": []
             },
+            "reqType": "post",
             "tests": []
         },
         {
@@ -33,14 +34,15 @@
             "method": "GET",
             "sortNum": 20000,
             "created": "2024-03-05T01:09:37.204Z",
-            "modified": "2024-03-05T03:13:06.150Z",
+            "modified": "2024-03-06T03:29:24.122Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2ODEwNTk1MWQ4MzMwYTMxNDg2NmIiLCJpYXQiOjE3MDk2MDgzNDUsImV4cCI6MTcwOTYxMTk0NX0.9Z938Tad5BpOHULg9ZkRYSa0Tbf-pMIhXQCqjW9BZgo"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZGI5NmYzN2U5YTg1NGEzZTE0ZmEiLCJpYXQiOjE3MDk2OTM4NjMsImV4cCI6MTcwOTY5NzQ2M30.aPhGkelr2Njltlr955ylf0DQnZ8YOjx-ZrSuWDW0h6I"
                 }
             ],
             "params": [],
+            "reqType": "get",
             "tests": []
         },
         {
@@ -72,19 +74,19 @@
             "colId": "58b49054-ab9a-4ea2-ad1b-07759af29b43",
             "containerId": "",
             "name": "userDelete",
-            "url": "http://localhost:8080/salesApi/v1/users/diego@kinal.edu.gt",
+            "url": "http://localhost:8080/salesApi/v1/users/65e89345289cb8f0cd47028b",
             "method": "DELETE",
             "sortNum": 40000,
             "created": "2024-03-05T03:29:05.245Z",
-            "modified": "2024-03-05T04:51:14.643Z",
+            "modified": "2024-03-08T07:36:29.516Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2ODEyNzNkMDVmYzAzOTUxYWVhNDciLCJpYXQiOjE3MDk2MTMyODQsImV4cCI6MTcwOTYxNjg4NH0.ItxO0AbOINm_5Zi9PkTBF3Lz8aQJby98o3JphvLnieE"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4OTM0NTI4OWNiOGYwY2Q0NzAyOGIiLCJpYXQiOjE3MDk4ODMzNjcsImV4cCI6MTcwOTkyNjU2N30.Ud-KHfGs1TWM61fn6PdMvZDDVWMZpnHWajeSuZYubEE"
                 }
             ],
             "params": [],
-            "reqType": "get",
+            "reqType": "del",
             "tests": []
         }
     ]

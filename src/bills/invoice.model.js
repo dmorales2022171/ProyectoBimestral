@@ -5,11 +5,6 @@ const invoiceSchema = mongoose.Schema({
         type: Date,
         default: Date.now()
     },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: [true, 'user is required']
-    },
     products: [{
         product: {
             type: mongoose.Schema.Types.ObjectId,
@@ -27,6 +22,11 @@ const invoiceSchema = mongoose.Schema({
             min: [0, 'Price must be greater than or equal to 0']
         }
     }],
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: [true, 'user is required']
+    },
     total:{
         type: Number,
         required: true

@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "productCollection",
-    "dateExported": "2024-03-07T13:59:26.895Z",
+    "dateExported": "2024-03-09T04:57:13.496Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -34,11 +34,11 @@
             "method": "GET",
             "sortNum": 20000,
             "created": "2024-03-06T11:48:26.985Z",
-            "modified": "2024-03-07T05:42:19.288Z",
+            "modified": "2024-03-08T03:07:50.025Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4OTM0NTI4OWNiOGYwY2Q0NzAyOGIiLCJpYXQiOjE3MDk3OTAxMjMsImV4cCI6MTcwOTgzMzMyM30.3FyRxpBdkXXwYJNPNarX5mFxNWkj5e3b5x_N1Q5q4uI"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZGI5NmYzN2U5YTg1NGEzZTE0ZmEiLCJpYXQiOjE3MDk4NjcyNTksImV4cCI6MTcwOTkxMDQ1OX0.J9GmN2TqCNqggWp2TYyNzn_UcY5f3p63fRHLngh2UEI"
                 }
             ],
             "params": [],
@@ -88,14 +88,15 @@
             "method": "GET",
             "sortNum": 50000,
             "created": "2024-03-07T03:12:22.957Z",
-            "modified": "2024-03-07T06:22:58.528Z",
+            "modified": "2024-03-08T07:47:52.089Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU4OTM0NTI4OWNiOGYwY2Q0NzAyOGIiLCJpYXQiOjE3MDk3OTI1NjksImV4cCI6MTcwOTgzNTc2OX0.jL9DJVA2rcS8Z-aZRvpLFKalJurpvCYGYoL6gHTy9Pg"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3ZGI5NmYzN2U5YTg1NGEzZTE0ZmEiLCJpYXQiOjE3MDk4ODQwNjQsImV4cCI6MTcwOTkyNzI2NH0.vXvnmMUVEyNisWp003UPmjwnLaGrONeYhfC7OoHFTf0"
                 }
             ],
             "params": [],
+            "reqType": "get",
             "tests": []
         },
         {
